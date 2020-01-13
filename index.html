@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Prism</title>
   <meta name="author" content="Vishal Chhabra">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +18,45 @@
             $(targetBox).show();
         });
     });
+
+    function save2File(type) {
+      let data = '';
+      if(type === 'api') {
+        let name = document.getElementById(`${type}-usr`);
+        let sel0 = document.getElementById(`${type}-sel0`);
+        let sel1 = document.getElementById(`${type}-sel1`);
+        data = name.value + '\n' + sel0.value + '\n' + sel1.value;
+      }
+      else if(type === 'mobile') {
+        let name = document.getElementById(`${type}-usr`);
+        let sel0 = document.getElementById(`${type}-sel0`);
+        let sel1 = document.getElementById(`${type}-sel1`);
+        let sel2 = document.getElementById(`${type}-sel2`);
+        data = name.value + '\n' + sel0.value + '\n' + sel1.value + '\n' + sel2.value;
+      }
+      else
+      {
+        let name = document.getElementById(`${type}-usr`);
+        let sel0 = document.getElementById(`${type}-sel0`);
+        let sel1 = document.getElementById(`${type}-sel1`);
+        let sel2 = document.getElementById(`${type}-sel2`);
+        let sel3 = document.getElementById(`${type}-sel3`);
+        data = name.value + '\n' + sel0.value + '\n' + sel1.value + '\n' + sel2.value + '\n' + sel3.value;
+      }
+      let textToBLOB = new Blob([data], { type: 'text/plain' });
+      let sFileName = `${type}FormInputs.txt`;
+      let newLink = document.createElement("a");
+      newLink.download = sFileName;
+      if (window.webkitURL != null) {
+        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+      }
+      else {
+        newLink.href = window.URL.createObjectURL(textToBLOB);
+        newLink.style.display = "none";
+        document.body.appendChild(newLink);
+      }
+      newLink.click();
+    }
     </script>
 </head>
 <body>
@@ -32,9 +71,6 @@
   </ul>
 
   <div class="tab-content">
-    
-    
-    
     <div id="home" class="tab-pane fade in active">
       <h3>Prism Setup</h3>
 
@@ -48,41 +84,41 @@
           
           <form>
             <div class="form-group">
-              <label for="usr">Project or Build Name</label>
-              <input type="text" class="form-control" id="usr" placeholder="Enter Project or Build Name">
+              <label for="web-java-usr">Project or Build Name</label>
+              <input type="text" class="form-control" id="web-java-usr" placeholder="Enter Project or Build Name" name="build-name-java">
             </div>
             <div class="form-group">
-              <label for="sel0">Test Case Management</label>
-              <select class="form-control" id="sel0">
+              <label for="web-java-sel0">Test Case Management</label>
+              <select class="form-control" id="web-java-sel0" name="test-case-java">
                 <option>No</option>
                 <option>TestLink</option>
                 <option>TestRail</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel1">Bug Tracking</label>
-              <select class="form-control" id="sel1">
+              <label for="web-java-sel1">Bug Tracking</label>
+              <select class="form-control" id="web-java-sel1" name="bug-tracking-java">
                 <option>No</option>
                 <option>Jira</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel2">Cloud Execution</label>
-              <select class="form-control" id="sel2">
+              <label for="web-java-sel2">Cloud Execution</label>
+              <select class="form-control" id="web-java-sel2" name="cloud-execution-java">
                 <option>No</option>
                 <option>Browse Stack</option>
                 <option>Sauce Labs</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel3">Report Type</label>
-              <select class="form-control" id="sel3">
+              <label for="web-java-sel3">Report Type</label>
+              <select class="form-control" id="web-java-sel3" name="report-type-java">
                 <option>Extent Report</option>
                 <option>Allure Report</option>
                 <option>Mixed Report</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="save2File('web-java')">Submit</button>
           </form>
 
 
@@ -90,41 +126,41 @@
         <div class="web-javascript box">
           <form>
             <div class="form-group">
-              <label for="usr">Project or Build Name</label>
-              <input type="text" class="form-control" id="usr" placeholder="Enter Project or Build Name">
+              <label for="web-js-usr">Project or Build Name</label>
+              <input type="text" class="form-control" id="web-js-usr" placeholder="Enter Project or Build Name">
             </div>
             <div class="form-group">
-              <label for="sel0">Test Case Management</label>
-              <select class="form-control" id="sel0">
+              <label for="web-js-sel0">Test Case Management</label>
+              <select class="form-control" id="web-js-sel0">
                 <option>No</option>
                 <option>TestLink</option>
                 <option>TestRail</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel1">Bug Tracking</label>
-              <select class="form-control" id="sel1">
+              <label for="web-js-sel1">Bug Tracking</label>
+              <select class="form-control" id="web-js-sel1">
                 <option>No</option>
                 <option>Jira</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel2">Cloud Execution</label>
-              <select class="form-control" id="sel2">
+              <label for="web-js-sel2">Cloud Execution</label>
+              <select class="form-control" id="web-js-sel2">
                 <option>No</option>
                 <option>Browse Stack</option>
                 <option>Sauce Labs</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel3">Report Type</label>
-              <select class="form-control" id="sel3">
+              <label for="web-js-sel3">Report Type</label>
+              <select class="form-control" id="web-js-sel3">
                 <option>Jasmine Report</option>
                 <option>Allure Report</option>
                 <option>Mixed Report</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="save2File('web-js')">Submit</button>
           </form>
 
 
@@ -132,33 +168,33 @@
         <div class="mobile box">
           <form>
             <div class="form-group">
-              <label for="usr">Project or Build Name</label>
-              <input type="text" class="form-control" id="usr" placeholder="Enter Project or Build Name">
+              <label for="mobile-usr">Project or Build Name</label>
+              <input type="text" class="form-control" id="mobile-usr" placeholder="Enter Project or Build Name">
             </div>
             <div class="form-group">
-              <label for="sel0">Test Case Management</label>
-              <select class="form-control" id="sel0">
+              <label for="mobile-sel0">Test Case Management</label>
+              <select class="form-control" id="mobile-sel0">
                 <option>No</option>
                 <option>TestLink</option>
                 <option>TestRail</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel2">Cloud Execution</label>
-              <select class="form-control" id="sel2">
+              <label for="mobile-sel1">Cloud Execution</label>
+              <select class="form-control" id="mobile-sel1">
                 <option>No</option>
                 <option>AWS Device Farm</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel3">Report Type</label>
-              <select class="form-control" id="sel3">
+              <label for="mobile-sel2">Report Type</label>
+              <select class="form-control" id="mobile-sel2">
                 <option>Extent Report</option>
                 <option>Allure Report</option>
                 <option>Mixed Report</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary"  onclick="save2File('mobile')">Submit</button>
           </form>
 
 
@@ -167,52 +203,40 @@
         <div class="api box">
           <form>
             <div class="form-group">
-              <label for="usr">Project or Build Name</label>
-              <input type="text" class="form-control" id="usr" placeholder="Enter Project or Build Name">
+              <label for="api-usr">Project or Build Name</label>
+              <input type="text" class="form-control" id="api-usr" placeholder="Enter Project or Build Name">
             </div>
             <div class="form-group">
-              <label for="sel1">Bug Tracking</label>
-              <select class="form-control" id="sel1">
+              <label for="api-sel0">Bug Tracking</label>
+              <select class="form-control" id="api-sel0">
                 <option>No</option>
                 <option>Jira</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="sel3">Report Type</label>
-              <select class="form-control" id="sel3">
+              <label for="api-sel1">Report Type</label>
+              <select class="form-control" id="api-sel1">
                 <option>Extent Report</option>
                 <option>Mixed Report</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary"  onclick="save2File('api')">Submit</button>
           </form>
-
-
         </div>
-
-
     </div>
 
 
 
     <div id="menu1" class="tab-pane fade">
       <h3>Execution and Report Setup</h3>
-<!-- 
-        <div>
-          <label><input type="radio-radio" name="colorRadio" value="web-java2">Web-Java</label>
-          <label><input type="radio-radio" name="colorRadio" value="web-javascript2">Web-JavaScript</label>
-          <label><input type="radio-radio" name="colorRadio" value="mobile2">Mobile</label>
-          <label><input type="radio-radio" name="colorRadio" value="api2">API</label>
-        </div> -->
-
         <div>
             <label class="container-radio"><input type="radio" name="colorRadio" value="web-java2">Web-Java<span class="checkmark"></span></label>
             <label class="container-radio"><input type="radio" name="colorRadio" value="web-javascript2">Web-JavaScript<span class="checkmark"></span></label>
             <label class="container-radio"><input type="radio" name="colorRadio" value="mobile2">Mobile<span class="checkmark"></span></label>
             <label class="container-radio"><input type="radio" name="colorRadio" value="api2">API<span class="checkmark"></span></label>
-          </div>
-        <div class="web-java2 box">
+        </div>
 
+        <div class="web-java2 box">
             <div class="panel panel-primary">
                 <div class="panel-heading">Select a XML file for Web-Java Execution:</div>
                 <div class="panel-body">
@@ -223,7 +247,6 @@
                     </form>  
                 </div>
             </div>
-
         </div>
 
         <div class="web-javascript2 box">
@@ -238,6 +261,7 @@
                 </div>
             </div>
         </div>
+
         <div class="mobile2 box">
             <div class="panel panel-primary">
                 <div class="panel-heading">Select a XML file for Mobile Execution:</div>
@@ -250,6 +274,7 @@
                 </div>
             </div>
         </div>
+
         <div class="api2 box">
             <div class="panel panel-primary">
                 <div class="panel-heading">Select a XML file for API Execution:</div>
@@ -262,14 +287,15 @@
                 </div>
             </div>
         </div>
+
     </div>
     
     
     <div id="menu2" class="tab-pane fade">
       <h3>Dashboard</h3>
+
+
     </div>
-
-
   </div>
 </div>
 
