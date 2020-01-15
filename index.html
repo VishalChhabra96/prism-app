@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Prism</title>
+  <title>PRISM</title>
   <meta name="author" content="Vishal Chhabra">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,11 +14,11 @@
 <body>
 
 <div class="container">
-  <h1 class="header">PRISM <img src="TTN-logo.jpg" height="40" width="40" id="logo"/></h1>
+  <h1 class="header">PRISM <img src="logo.jpg" height="40" width="40" id="logo"/></h1>
   <hr/>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Prism Setup</a></li>
-    <li><a data-toggle="tab" href="#menu1">Execution and Report Setup</a></li>
+    <li class="active"><a data-toggle="tab" href="#home" onclick="toggleView('PrismSetup')">Prism Setup</a></li>
+    <li><a data-toggle="tab" href="#menu1" onclick="toggleView('ExecutionPage')">Execution and Report Setup</a></li>
     <li><a data-toggle="tab" href="#menu2">Dashboard</a></li>
   </ul>
 
@@ -27,7 +27,7 @@
       <h3>Prism Setup</h3>
 
       <div>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="web-java">Web-Java<span class="checkmark"></span></label>
+        <label class="container-radio"><input type="radio" name="colorRadio" value="web-java" id="linkid1">Web-Java<span class="checkmark"></span></label>
         <label class="container-radio"><input type="radio" name="colorRadio" value="web-javascript">Web-JavaScript<span class="checkmark"></span></label>
         <label class="container-radio"><input type="radio" name="colorRadio" value="mobile">Mobile<span class="checkmark"></span></label>
         <label class="container-radio"><input type="radio" name="colorRadio" value="api">API<span class="checkmark"></span></label>
@@ -182,7 +182,7 @@
     <div id="menu1" class="tab-pane fade">
       <h3>Execution and Report Setup</h3>
       <div>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="web-java2">Web-Java<span class="checkmark"></span></label>
+        <label class="container-radio"><input type="radio" name="colorRadio" value="web-java2"  id="linkid2">Web-Java<span class="checkmark"></span></label>
         <label class="container-radio"><input type="radio" name="colorRadio" value="web-javascript2">Web-JavaScript<span class="checkmark"></span></label>
         <label class="container-radio"><input type="radio" name="colorRadio" value="mobile2">Mobile<span class="checkmark"></span></label>
         <label class="container-radio"><input type="radio" name="colorRadio" value="api2">API<span class="checkmark"></span></label>
