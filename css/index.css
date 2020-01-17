@@ -1,3 +1,7 @@
+* {
+    font-family: Lato;
+}
+
 h2 {
     color: dodgerblue;
     margin-bottom: 30px;
@@ -11,34 +15,22 @@ h3 {
     float: right;
 }
 
-* {
-    font-family: Lato;
-}
-
 a {
     font-weight: 600;
 }
 
 h4 {
     margin-top: 20px;
-    /* margin-left: 20px; */
     color: dodgerblue;
 }
 
 .box{
-    /* color: #fff; */
-    /* padding: 20px; */
     display: none;
     margin-top: 20px;
 }
 
-/* label {
-    margin-left: 20px;
-} */
-
-/* The container */
 .container-radio {
-  margin-right: 135px;
+    margin-right: 135px;
     display: inline;
     position: relative;
     padding-left: 35px;

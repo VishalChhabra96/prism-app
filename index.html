@@ -90,8 +90,9 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="web-java-loc">Folder Name</label>
-            <input type="text" class="form-control" id="web-java-loc" placeholder="Enter Folder Name" name="loc-java">
+            <label for="web-java-loc">Browse Folder</label>
+            <input type="file" class="form-control" id="web-java-loc" title="Browse Folder Location" name="loc-java">
+<!--            <input type="file" name="myFile"><br><br>-->
           </div>
 
           <button type="submit" class="btn btn-primary" onclick="save2File('web-java')">Submit</button>
@@ -137,8 +138,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="web-js-loc">Folder Name</label>
-            <input type="text" class="form-control" id="web-js-loc" placeholder="Enter Folder Name" name="loc-js">
+            <label for="web-js-loc">Browse Folder</label>
+            <input type="file" title="Browse Folder Location" class="form-control" id="web-js-loc" name="loc-js">
           </div>
           <button type="submit" class="btn btn-primary" onclick="save2File('web-js')">Submit</button>
         </form>
@@ -175,8 +176,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="mobile-loc">Folder Name</label>
-            <input type="text" class="form-control" id="mobile-loc" placeholder="Enter Folder Name" name="loc-mobile">
+            <label for="mobile-loc">Browse Folder</label>
+            <input type="file" class="form-control" id="mobile-loc" title="Browse Folder Location" name="loc-mobile">
           </div>
           <button type="submit" class="btn btn-primary"  onclick="save2File('mobile')">Submit</button>
         </form>
@@ -205,8 +206,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="api-loc">Folder Name</label>
-            <input type="text" class="form-control" id="api-loc" placeholder="Enter Folder Name" name="loc-api">
+            <label for="api-loc">Browse Folder</label>
+            <input type="file" class="form-control" id="api-loc" title="Browse Folder Location" name="loc-api">
           </div>
           <button type="submit" class="btn btn-primary"  onclick="save2File('api')">Submit</button>
         </form>
@@ -301,16 +302,16 @@
     <div id="menu2" class="tab-pane fade">
       <h3>Dashboard</h3>
       <div>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="S2" id="linkid3">S2 Bucket<span class="checkmark"></span></label>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="Local">Local<span class="checkmark"></span></label>
-      </div>
-
-      <div class="S2 box">
-        <!--<h4>S2</h4>-->
+        <label class="container-radio"><input type="radio" name="colorRadio" value="Local" id="linkid3">Local<span class="checkmark"></span></label>
+        <label class="container-radio"><input type="radio" name="colorRadio" value="S2">S3 Bucket<span class="checkmark"></span></label>
       </div>
 
       <div class="Local box">
-        <!--<h4>Local</h4>-->
+        <h6>Local Content</h6>
+      </div>
+
+      <div class="S2 box">
+        <h6>S3 Bucket Content</h6>
       </div>
 
     </div>
