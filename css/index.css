@@ -102,3 +102,16 @@ h4 {
     color: #2196F3;
     font-weight: 900;
   }
+
+  #fileList > a {
+      display: block;
+      margin: 20px 0px;
+      cursor: pointer;
+  }
+
+  #frame {
+      /*background-color: ;*/
+      border: 1px solid black;
+      min-height: 360px !important;
+  }
+

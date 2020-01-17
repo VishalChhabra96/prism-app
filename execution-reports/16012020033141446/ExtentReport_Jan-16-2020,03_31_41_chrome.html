@@ -1,0 +1,2831 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/39026ad/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Tiko-Energy Automation Report</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			css-string
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Tiko-Energy Test Report</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Jan 16, 2020 15:31:41</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>LoginLogout</a></li>
+					<li><a href='#'>BasicDashboardChecksInMemberSpace</a></li>
+					<li><a href='#'>BasicChecksOnTheSupportPage</a></li>
+					<li><a href='#'>VerifyAreas</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='60%'><span class='strong'>3</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='40%'>2</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>C530_InvalidLogin</span>
+						<span class='test-time'>Jan 16, 2020 15:31:59</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 16, 2020 15:31:59</span>
+	<span class='label end-time'>Jan 16, 2020 15:31:59</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>LoginLogout</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:31:59 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginLink" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:02 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on on LoginLink<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:02 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:06 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on accept Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:22 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "fulldemo@tiko.ch" in UserName: fulldemo@tiko.ch<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:23 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "12345678" in Password: 12345678<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:24 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on smsConfirmationButton<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:26 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Verify Message data verified<BR>actualResult=There was a problem sending the confirmation, please check the login and password you have entered above and retry sending the confirmation SMS.<BR>expectedResult=There was a problem sending the confirmation, please check the login and password you have entered above and retry sending the confirmation SMS.
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:27 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "123456@tiko.ch" in UserName: 123456@tiko.ch<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:28 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "demo2015" in Password: demo2015<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:29 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on smsConfirmationButton<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:32 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Verify Message data verified<BR>actualResult=There was a problem sending the confirmation, please check the login and password you have entered above and retry sending the confirmation SMS.<BR>expectedResult=There was a problem sending the confirmation, please check the login and password you have entered above and retry sending the confirmation SMS.
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:33 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "fulldemo@tiko.ch" in UserName: fulldemo@tiko.ch<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:34 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "demo2015" in Password: demo2015<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:35 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on smsConfirmationButton<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:38 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Verify Message data verified<BR>actualResult=Please note: A confirmation SMS is not necessary for this account. Please click the Login button below to access your account.<BR>expectedResult=Please note: A confirmation SMS is not necessary for this account. Please click the Login button below to access your account.
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:38 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>C530_InvalidLogin Test Case PASSED</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>C532_ChangeLanguages</span>
+						<span class='test-time'>Jan 16, 2020 15:32:53</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 16, 2020 15:32:53</span>
+	<span class='label end-time'>Jan 16, 2020 15:32:53</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>LoginLogout</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:53 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginLink" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:56 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on on LoginLink<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:32:56 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:02 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on accept Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:17 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify english Language headerText data verified<BR>actualResult=Member Space<BR>expectedResult=Member Space
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:19 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on German language Link<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:19 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:22 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify Language headerText data verified<BR>actualResult=Teilnehmerbereich<BR>expectedResult=Teilnehmerbereich
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:25 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on French language Link<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:25 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:28 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify Language headerText data verified<BR>actualResult=Votre Espace Membre<BR>expectedResult=Votre Espace Membre
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:30 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on italian language Link<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:30 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:33 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify Language headerText data verified<BR>actualResult=La sua area cliente<BR>expectedResult=La sua area cliente
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:34 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "fulldemo@tiko.ch" in UserName<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:35 PM</td>
+				<td class='step-details'>
+						<b>enterData</b><BR>Entered Value "demo2015" in Password<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:44 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on submit Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:44 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "logOut" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:33:46 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "homepage conSumptionSummaryHeader" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:03 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>homepage Consumption Summary Header data verified<BR>actualResult=CONSUMPTION SUMMARY<BR>expectedResult=CONSUMPTION SUMMARY
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:04 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on language selection Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:04 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "wait for language" got visible or upto 5 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:08 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on German language button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:08 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "homepage_header" got visible or upto 5 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:14 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify Header data verified<BR>actualResult=VERBRAUCHSÜBERSICHT<BR>expectedResult=VERBRAUCHSÜBERSICHT
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:14 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on language selection Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:14 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "wait for language" got visible or upto 5 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:18 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on French language button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:18 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "homepage_header" got visible or upto 5 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:23 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify Header data verified<BR>actualResult=CONSOMMATION TOTALE<BR>expectedResult=CONSOMMATION TOTALE
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:24 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on language selection Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:24 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "wait for language" got visible or upto 5 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:28 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Italian language button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:28 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "homepage_header" got visible or upto 5 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:32 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify Header data verified<BR>actualResult=SOMMARIO CONSUMO<BR>expectedResult=SOMMARIO CONSUMO
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:32 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>C532_ChangeLanguages Test Case PASSED</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>C753_CheckEcoModeExtension</span>
+						<span class='test-time'>Jan 16, 2020 15:34:48</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 16, 2020 15:34:48</span>
+	<span class='label end-time'>Jan 16, 2020 15:34:48</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>BasicDashboardChecksInMemberSpace</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:48 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginLink" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:51 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on on LoginLink<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:51 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:34:55 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on accept Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:11 PM</td>
+				<td class='step-details'>
+						<b>enterDataByJavaScript</b><BR>Entered Value "fulldemo@tiko.ch" in UserName<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:12 PM</td>
+				<td class='step-details'>
+						<b>enterDataByJavaScript</b><BR>Entered Value "demo2015" in Password<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:21 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on submit Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:21 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "homepage conSumptionSummaryHeader" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:24 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "ecoMode.header" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:42 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>ecoMode.header data verified<BR>actualResult=ECO MODE<BR>expectedResult=ECO MODE
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:43 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>verify ecoMode is off data verified<BR>actualResult=OFF<BR>expectedResult=OFF
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:44 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on ecomode setCalender<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:44 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "ecoMode Section header" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:47 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>ecoMode Section header data verified<BR>actualResult=Schedule Eco Mode<BR>expectedResult=Schedule Eco Mode
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:48 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field ECO MODE SCHEDULE<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:49 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>ECO MODE SCHEDULE data verified<BR>actualResult=ECO MODE SCHEDULE<BR>expectedResult=ECO MODE SCHEDULE
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:51 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on startDate<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:53 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on next Month<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:55 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field Start Date Selection <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:56 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Start Date Selection <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:35:59 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on End Date Selection<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:17 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Select Hot water Selection<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:19 PM</td>
+				<td class='step-details'>
+						<b>verifyElementExists</b><BR>"Add new Button" element exists <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:20 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Deselct Hot- water Selection<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:23 PM</td>
+				<td class='step-details'>
+						<b>verifyElementNotExists</b><BR>"Add new Button" element not exists <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:24 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Select Hot- water Selection<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:27 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on add new button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:29 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field date<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:30 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>ECO MODE SCHEDULE data verified<BR>actualResult=ECO MODE SCHEDULE<BR>expectedResult=ECO MODE SCHEDULE
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:30 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field Date Verification<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:30 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Date Verification data verified<BR>actualResult=3 Feb to 6 Feb, 2020<BR>expectedResult=3 Feb to 6 Feb, 2020
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:30 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Schedule Eco Mode % data verified<BR>actualResult=40%<BR>expectedResult=40%
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:30 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Device Name data verified<BR>actualResult=Home Boiler<BR>expectedResult=Home Boiler
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:31 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on edit Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:33 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field verify confim button Enabled<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:34 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on change slider to 0% <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:34 PM</td>
+				<td class='step-details'>
+						<b>pressKey</b><BR>arrow_left key pressed<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:36 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Remove Eco schedule<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:55 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>No schedules set data verified<BR>actualResult=No schedules set<BR>expectedResult=No schedules set
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:36:56 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on close<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:13 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on ecomode switch to on<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:14 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>	verify ecoMode is On data verified<BR>actualResult=ON<BR>expectedResult=ON
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:15 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on 	ecomode setCalender<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:15 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "ecoMode Section header" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:18 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>	ecoMode Section header data verified<BR>actualResult=Schedule Eco Mode<BR>expectedResult=Schedule Eco Mode
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:19 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field 	ECO MODE SCHEDULE<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:20 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>	ECO MODE SCHEDULE data verified<BR>actualResult=ECO MODE SCHEDULE<BR>expectedResult=ECO MODE SCHEDULE
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:20 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field Date Verification<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:21 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Date Verification data verified<BR>actualResult=16 Jan to 17 Jan, 2020<BR>expectedResult=16 Jan to 17 Jan, 2020
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:21 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>	ECO MODE SCHEDULE % data verified<BR>actualResult=40%<BR>expectedResult=40%
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:22 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on close<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:39 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on EcoMode Active Button to OFF<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:44 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Verify Ecomode is OFF data verified<BR>actualResult=OFF<BR>expectedResult=OFF
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:54 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on logout Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:37:54 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>C753_CheckEcoModeExtension Test Case PASSED</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>C546_CheckTroubleshooting</span>
+						<span class='test-time'>Jan 16, 2020 15:38:11</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 16, 2020 15:38:11</span>
+	<span class='label end-time'>Jan 16, 2020 15:38:11</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>BasicChecksOnTheSupportPage</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:11 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginLink" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:14 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on on LoginLink<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:14 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:18 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on accept Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:33 PM</td>
+				<td class='step-details'>
+						<b>enterDataByJavaScript</b><BR>Entered Value "fulldemo@tiko.ch" in UserName<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:34 PM</td>
+				<td class='step-details'>
+						<b>enterDataByJavaScript</b><BR>Entered Value "demo2015" in Password<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:42 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on submit Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:42 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "homepage conSumptionSummaryHeader" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:38:45 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "support link" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:39:06 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on support Link<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:39:06 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "Second House Tab Link" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:39:27 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "trouble shooting Tab" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:39:28 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "trouble shooting Header" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:39:43 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>C546_CheckTroubleshooting FAILED </span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:39:43 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>C546_CheckTroubleshooting - Test Case Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:39:43 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: The following asserts failed:
+	org.openqa.selenium.TimeoutException -> Second House Tab Link did not got visible
+Expected condition failed: waiting for visibility of element located by By.xpath: //a[@class='nav-link' and @href='/support/14583']/.. (tried for 15 second(s) with 500 milliseconds interval),
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on Second House Tab Link
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//a[@class='nav-link' and @href='/support/14583']/..},
+	org.openqa.selenium.NoSuchWindowException -> trouble shooting Tab did not got visible
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//a[@class='nav-link' and @href='/support/14583/troubleshooting']/..},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on trouble shooting Tab
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//a[@class='nav-link' and @href='/support/14583/troubleshooting']/..},
+	org.openqa.selenium.NoSuchWindowException -> trouble shooting Header did not got visible
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='route-troubleshooting-component pt-3']//h4},
+	org.openqa.selenium.NoSuchWindowException -> Error while data verification of trouble shooting Header
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='route-troubleshooting-component pt-3']//h4},
+	org.openqa.selenium.NoSuchWindowException -> Error while data verification of trouble shooting pragraph-1
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='route-troubleshooting-component pt-3']//p[1]},
+	org.openqa.selenium.NoSuchWindowException -> Error while data verification of trouble shooting pragraph-2
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='route-troubleshooting-component pt-3']//p[2]},
+	org.openqa.selenium.NoSuchWindowException -> Error while data verification of trouble shooting pragraph-3
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='route-troubleshooting-component pt-3']//p[3]},
+	org.openqa.selenium.NoSuchWindowException -> Error while data verification of trouble shooting pragraph-4
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='route-troubleshooting-component pt-3']//p[4]},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on on circle light button
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[1]},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on green color selection
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='mbox-wrapper']//div[@class='dropdown-menu show']//div[2]},
+	org.openqa.selenium.NoSuchWindowException -> Error while verification of attribute/value (class:green) of on circle light button
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[1]//div},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on on sqaure light button-1
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[2]},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on red color selection
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='mbox-wrapper']//div[@class='dropdown-menu show']//div[4]},
+	org.openqa.selenium.NoSuchWindowException -> Error while verification of attribute/value (class:red) of on sqaure light button-1
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[2]//div},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on on circle light button
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[3]},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on gray color selection
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='mbox-wrapper']//div[@class='dropdown-menu show']//div[1]},
+	org.openqa.selenium.NoSuchWindowException -> Error while verification of attribute/value (class:gray) of on sqaure light button-2
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[3]//div},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on on circle light button
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[4]},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on Orange color selection
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//div[@class='mbox-wrapper']//div[@class='dropdown-menu show']//div[3]},
+	org.openqa.selenium.NoSuchWindowException -> Error while verification of attribute/value (class:orange) of on sqaure light button-3
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=(//div[@class='mbox-wrapper']//div[@class='dropdown'])[4]//div},
+	org.openqa.selenium.NoSuchWindowException -> Error while clicking on logout Button
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-DFVMP02', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\GIRISH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 822fca3fb72b5c898a4118bfd9e24970
+*** Element info: {Using=xpath, value=//a[@href='/disconnect/']} - Test Case Failed</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>C624_AdjustTemperatureTemporarily</span>
+						<span class='test-time'>Jan 16, 2020 15:39:59</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 16, 2020 15:39:59</span>
+	<span class='label end-time'>Jan 16, 2020 15:39:59</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>VerifyAreas</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:39:59 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginLink" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:03 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on on LoginLink<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:03 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "loginPage userName" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:07 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on accept Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:22 PM</td>
+				<td class='step-details'>
+						<b>enterDataByJavaScript</b><BR>Entered Value "dehdemo@tiko.ch" in UserName<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:23 PM</td>
+				<td class='step-details'>
+						<b>enterDataByJavaScript</b><BR>Entered Value "48330a0d81cd816fa3a4d038c732963d" in Password<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:35 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on submit Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:42 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "homepage Areas Header" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:40:44 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "wait to load Area Header" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:01 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Area Header data verified<BR>actualResult=AREAS<BR>expectedResult=AREAS
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:02 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Room Tab<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:02 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "wait to load" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:07 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on check Plus-Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:41:10 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Error while data verification of  check current-Temp<BR>java.lang.AssertionError: "check current-Temp" data not verified expected [41°] but found [40°]<BR>actualResult=40°<BR>expectedResult=41°
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='TC_C624/1.png' src='TC_C624/1.png' data-src='TC_C624/1.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:10 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Check Temporary Adjustment data verified<BR>actualResult=Temporary Adjustment active until next schedule point.<BR>expectedResult=Temporary Adjustment active until next schedule point.
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:11 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on close Modal<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:41:27 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Error while data verification of  Temperature-2<BR>java.lang.AssertionError: "Temperature-2" data not verified expected [41°] but found [40°]<BR>actualResult=40°<BR>expectedResult=41°
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='TC_C624/2.png' src='TC_C624/2.png' data-src='TC_C624/2.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:28 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field check Temporary Icon<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:29 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Room Tab<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:29 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "wait to load" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:32 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on check Minus-Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:32 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>check current-Temp data verified<BR>actualResult=39°<BR>expectedResult=39°
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:33 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on close Modal<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:41:53 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Temperature-2 data verified<BR>actualResult=39°<BR>expectedResult=39°
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:09 PM</td>
+				<td class='step-details'>
+						<b>focusMoveToElement</b><BR>Focus moved to field check Temporary Icon<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:10 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Room Tab<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:10 PM</td>
+				<td class='step-details'>
+						<b>explicitWaitForFieldGetVisible</b><BR>Wait untill "wait to load" got visible or upto 15 second(s)<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:13 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on increase Temperature by - 1<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:14 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>check current-Temp data verified<BR>actualResult=40°<BR>expectedResult=40°
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:14 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:16 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>check Maximimum-Temp data verified<BR>actualResult=40°<BR>expectedResult=40°
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:17 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:18 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 1<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:20 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 2<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:22 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 3<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:23 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 4<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:25 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 5<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:27 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 6<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:29 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 7<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:31 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 8<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:32 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 9<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:34 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 10<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:36 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 11<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:38 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 12<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:40 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 13<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:42 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 14<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:43 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 15<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:45 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 16<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:47 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 17<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:49 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 18<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:51 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 19<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:53 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 20<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:55 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 21<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:56 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 22<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:42:58 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 23<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:00 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 24<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:02 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 25<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:04 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 26<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:05 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 27<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:07 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 28<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:09 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 29<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:11 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 30<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:13 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 31<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:14 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 32<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:16 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 33<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:18 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 34<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:20 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 35<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:22 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 36<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:24 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 37<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:25 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 38<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:27 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 39<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:29 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 40<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:43:33 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Error while data verification of  check current-Temp<BR>java.lang.AssertionError: "check current-Temp" data not verified expected [0°] but found [5°]<BR>actualResult=5°<BR>expectedResult=0°
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='TC_C624/3.png' src='TC_C624/3.png' data-src='TC_C624/3.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:34 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on decrease Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:43:36 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Error while data verification of  check Minimum-Temp<BR>java.lang.AssertionError: "check Minimum-Temp" data not verified expected [0°] but found [5°]<BR>actualResult=5°<BR>expectedResult=0°
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='TC_C624/4.png' src='TC_C624/4.png' data-src='TC_C624/4.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:37 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:37 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:38 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:39 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:40 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:41 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:42 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:43 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:43 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:44 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:45 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:46 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:47 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:48 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:48 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:49 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:50 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:51 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:52 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:52 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:53 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:54 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:55 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:56 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:57 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:57 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:58 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:43:59 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:00 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:01 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:01 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:02 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:03 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:04 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:05 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:05 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:06 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:07 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:08 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:44:09 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on Increase Temperature by - 1 <BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:44:10 PM</td>
+				<td class='step-details'>
+						<b>verifyData</b><BR>Error while data verification of  check current-Temp<BR>java.lang.AssertionError: "check current-Temp" data not verified expected [39°] but found [40°]<BR>actualResult=40°<BR>expectedResult=39°
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='TC_C624/5.png' src='TC_C624/5.png' data-src='TC_C624/5.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:47:12 PM</td>
+				<td class='step-details'>
+						<b>click</b><BR>Clicked on logout Button<BR>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:47:12 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>C624_AdjustTemperatureTemporarily FAILED </span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:47:12 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>C624_AdjustTemperatureTemporarily - Test Case Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:47:12 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: The following asserts failed:
+	java.lang.AssertionError -> Error while data verification of check current-Temp
+"check current-Temp" data not verified expected [41°] but found [40°],
+	java.lang.AssertionError -> Error while data verification of Temperature-2
+"Temperature-2" data not verified expected [41°] but found [40°],
+	java.lang.AssertionError -> Error while data verification of check current-Temp
+"check current-Temp" data not verified expected [0°] but found [5°],
+	java.lang.AssertionError -> Error while data verification of check Minimum-Temp
+"check Minimum-Temp" data not verified expected [0°] but found [5°],
+	java.lang.AssertionError -> Error while data verification of check current-Temp
+"check current-Temp" data not verified expected [39°] but found [40°] - Test Case Failed</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>LoginLogout</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 16, 2020 15:31:59</td>
+										<td class='linked' test-id='1'>C530_InvalidLogin</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 16, 2020 15:32:53</td>
+										<td class='linked' test-id='2'>C532_ChangeLanguages</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>BasicDashboardChecksInMemberSpace</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 16, 2020 15:34:48</td>
+										<td class='linked' test-id='3'>C753_CheckEcoModeExtension</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>BasicChecksOnTheSupportPage</span>
+						<span class='category-status right'>
+						<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 16, 2020 15:38:11</td>
+										<td class='linked' test-id='4'>C546_CheckTroubleshooting</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>VerifyAreas</span>
+						<span class='category-status right'>
+						<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 16, 2020 15:39:59</td>
+										<td class='linked' test-id='5'>C624_AdjustTemperatureTemporarily</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>5</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 16, 2020 15:31:41</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 16, 2020 15:47:12</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 15m 31s+279ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Application Name</td>
+								<td>Tiko-Energy Report</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Girish</td>
+							</tr>
+							<tr>
+								<td>Envirnoment</td>
+								<td>Stage</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>LoginLogout</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>BasicDashboardChecksInMemberSpace</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>BasicChecksOnTheSupportPage</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>VerifyAreas</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 5,
+				passParent: 3,
+				failParent: 2,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 2,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "C530_InvalidLogin":0,"C532_ChangeLanguages":0,"C753_CheckEcoModeExtension":0,"C546_CheckTroubleshooting":0,"C624_AdjustTemperatureTemporarily":0
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/c23457b/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			js-string
+		</script>
+	</body>
+</html>

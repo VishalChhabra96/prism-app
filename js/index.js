@@ -8,6 +8,22 @@ $(document).ready(function(){
     $("#linkid1").click();
 });
 
+function showFiles() {
+    let input = document.getElementById('filesToUpload');
+    let list = document.getElementById('fileList');
+
+    while (list.hasChildNodes()) {
+        list.removeChild(list.firstChild);
+    }
+
+    for (let x = 0; x < input.files.length; x++) {
+        let li = document.createElement('a');
+        li.setAttribute('href', 'index.html');
+        li.innerHTML = 'File ' + (x + 1) + ':  ' + input.files[x].name.split(/_(.+)/)[1];
+        list.append(li);
+    }
+}
+
 function toggleView(page) {
     if(page === 'PrismSetup') {
         $("#linkid1").click();
