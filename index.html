@@ -27,11 +27,30 @@
       <h3>Prism Setup</h3>
 
       <div>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="web-java" id="linkid1">Web-Java<span class="checkmark"></span><img src="./images/java.svg" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="web-javascript">Web-JavaScript<span class="checkmark"></span><img src="./images/js.svg" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="mobile">Mobile<span class="checkmark"></span><img src="./images/android.svg" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="api">API<span class="checkmark"></span><img src="./images/rest-api.png" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
+        <label class="container-radio">
+          <input type="radio" name="colorRadio" value="web-java" id="linkid1">
+            Web-Java
+          <span class="checkmark"></span>
+          <img src="./images/java.svg" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
+        <label class="container-radio"><input type="radio" name="colorRadio" value="web-javascript">
+          Web-JavaScript
+          <span class="checkmark"></span>
+          <img src="./images/js.svg" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
+        <label class="container-radio">
+          <input type="radio" name="colorRadio" value="mobile">
+          Mobile
+          <span class="checkmark"></span>
+          <img src="./images/android.svg" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
+        <label class="container-radio"><input type="radio" name="colorRadio" value="api">
+          API
+          <span class="checkmark"></span>
+          <img src="./images/rest-api.png" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
       </div>
+
       <div class="web-java box">
 
         <form>
@@ -71,8 +90,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="web-java-loc">Folder Path</label>
-            <input type="text" class="form-control" id="web-java-loc" placeholder="Enter Folder Path" name="loc-java">
+            <label for="web-java-loc">Folder Name</label>
+            <input type="text" class="form-control" id="web-java-loc" placeholder="Enter Folder Name" name="loc-java">
           </div>
 
           <button type="submit" class="btn btn-primary" onclick="save2File('web-java')">Submit</button>
@@ -118,8 +137,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="web-js-loc">Folder Path</label>
-            <input type="text" class="form-control" id="web-js-loc" placeholder="Enter Folder Path" name="loc-js">
+            <label for="web-js-loc">Folder Name</label>
+            <input type="text" class="form-control" id="web-js-loc" placeholder="Enter Folder Name" name="loc-js">
           </div>
           <button type="submit" class="btn btn-primary" onclick="save2File('web-js')">Submit</button>
         </form>
@@ -156,8 +175,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="mobile-loc">Folder Path</label>
-            <input type="text" class="form-control" id="mobile-loc" placeholder="Enter Folder Path" name="loc-mobile">
+            <label for="mobile-loc">Folder Name</label>
+            <input type="text" class="form-control" id="mobile-loc" placeholder="Enter Folder Name" name="loc-mobile">
           </div>
           <button type="submit" class="btn btn-primary"  onclick="save2File('mobile')">Submit</button>
         </form>
@@ -186,8 +205,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="api-loc">Folder Path</label>
-            <input type="text" class="form-control" id="api-loc" placeholder="Enter Folder Path" name="loc-api">
+            <label for="api-loc">Folder Name</label>
+            <input type="text" class="form-control" id="api-loc" placeholder="Enter Folder Name" name="loc-api">
           </div>
           <button type="submit" class="btn btn-primary"  onclick="save2File('api')">Submit</button>
         </form>
@@ -199,10 +218,29 @@
     <div id="menu1" class="tab-pane fade">
       <h3>Execution Setup</h3>
       <div>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="web-java2"  id="linkid2">Web-Java<span class="checkmark"></span><img src="./images/java.svg" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="web-javascript2">Web-JavaScript<span class="checkmark"></span><img src="./images/js.svg" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="mobile2">Mobile<span class="checkmark"></span><img src="./images/android.svg" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
-        <label class="container-radio"><input type="radio" name="colorRadio" value="api2">API<span class="checkmark"></span><img src="./images/rest-api.png" height="30" width="30" style="    margin: 0 0 10px 10px;"/></label>
+        <label class="container-radio"><input type="radio" name="colorRadio" value="web-java2" id="linkid2">
+          Web-Java
+          <span class="checkmark"></span>
+          <img src="./images/java.svg" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
+        <label class="container-radio">
+          <input type="radio" name="colorRadio" value="web-javascript2">
+          Web-JavaScript
+          <span class="checkmark"></span>
+          <img src="./images/js.svg" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
+        <label class="container-radio">
+          <input type="radio" name="colorRadio" value="mobile2">
+          Mobile
+          <span class="checkmark"></span>
+          <img src="./images/android.svg" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
+        <label class="container-radio">
+          <input type="radio" name="colorRadio" value="api2">
+          API
+          <span class="checkmark"></span>
+          <img src="./images/rest-api.png" height="30" width="30" style="margin: 0 0 10px 10px;"/>
+        </label>
       </div>
 
       <div class="web-java2 box">
