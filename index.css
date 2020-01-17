@@ -38,7 +38,7 @@ h4 {
 
 /* The container */
 .container-radio {
-  margin-right: 240px;
+  margin-right: 135px;
     display: inline;
     position: relative;
     padding-left: 35px;
@@ -51,7 +51,7 @@ h4 {
     user-select: none;
     color: #2196F3;
   }
-  
+
   /* Hide the browser's default radio button */
   .container-radio input {
     position: absolute;

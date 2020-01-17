@@ -15,6 +15,9 @@ function toggleView(page) {
     if(page === 'ExecutionPage') {
         $("#linkid2").click();
     }
+    if(page === 'DashboardPage') {
+        $("#linkid3").click();
+    }
 }
 
 function save2File(type) {
@@ -22,18 +25,19 @@ function save2File(type) {
     let name = document.getElementById(`${type}-usr`);
     let sel0 = document.getElementById(`${type}-sel0`);
     let sel1 = document.getElementById(`${type}-sel1`);
+    let loc = document.getElementById(`${type}-loc`);
     if(type === 'api') {
-        data = name.value + '\n' + sel0.value + '\n' + sel1.value;
+        data = name.value + '\n' + sel0.value + '\n' + sel1.value + '\n' + loc.value;
     }
     else if(type === 'mobile') {
         let sel2 = document.getElementById(`${type}-sel2`);
-        data = name.value + '\n' + sel0.value + '\n' + sel1.value + '\n' + sel2.value;
+        data = name.value + '\n' + sel0.value + '\n' + sel1.value + '\n' + sel2.value + '\n' + loc.value;
     }
     else
     {
         let sel2 = document.getElementById(`${type}-sel2`);
         let sel3 = document.getElementById(`${type}-sel3`);
-        data = name.value + '\n' + sel0.value + '\n' + sel1.value + '\n' + sel2.value + '\n' + sel3.value;
+        data = name.value + '\n' + sel0.value + '\n' + sel1.value + '\n' + sel2.value + '\n' + sel3.value + '\n' + loc.value;
     }
     let textToBLOB = new Blob([data], { type: 'text/plain' });
     let sFileName = `${type}-FormInputs.txt`;
